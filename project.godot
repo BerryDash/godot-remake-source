@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="Berry Dash Godot Remake"
+run/main_scene="uid://bg4fa11htun38"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
@@ -21,3 +28,4 @@ project/assembly_name="Berry Dash Godot Remake"
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.0627451, 0.0627451, 0.0627451, 1)

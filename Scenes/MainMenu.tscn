@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bg4fa11htun38"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Control" parent="Center"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -156.0
+offset_right = 20.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="Label" parent="Center/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -127.0
+offset_right = 8376.0
+offset_bottom = 2298.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0800014, 0.0800014)
+theme_override_font_sizes/font_size = 1596
+text = "Berry Dash"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GodotText" type="Label" parent="Center/Title"]
+modulate = Color(0.3019, 0.560815, 0.753292, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 199.0
+offset_top = 10.0
+offset_right = 499.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.44, 0.44)
+theme_override_font_sizes/font_size = 100
+text = "Godot"
+horizontal_alignment = 1
+vertical_alignment = 1
