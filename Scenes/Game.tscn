@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgt46l5p8qrwc"]
+
+[ext_resource type="Script" uid="uid://dfv3cmvcskd6t" path="res://Scripts/Player.cs" id="1_gl6un"]
+[ext_resource type="Texture2D" uid="uid://5ecdlqnn0u6g" path="res://Textures/Icons/Bird1.png" id="1_iukft"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Center" type="Node2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(960, 978)
+script = ExtResource("1_gl6un")
+
+[node name="Texture" type="Sprite2D" parent="Player"]
+scale = Vector2(1.675, 1.675)
+texture = ExtResource("1_iukft")
