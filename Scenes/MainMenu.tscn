@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=5 format=3 uid="uid://bg4fa11htun38"]
 
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
+bg_color = Color(0.95158, 0.95158, 0.95158, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8saeu"]
+bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt5f1"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,9 +45,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -156.0
+offset_top = -118.0
 offset_right = 20.0
-offset_bottom = -116.0
+offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -78,3 +91,43 @@ theme_override_font_sizes/font_size = 100
 text = "Godot"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="Center"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Center/Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -37.5
+offset_right = 125.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_853f1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8saeu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
+text = "Play"
