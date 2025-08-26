@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=9 format=3 uid="uid://bg4fa11htun38"]
 
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://bc4miccifwrk0" path="res://Scripts/SceneSwitcher.cs" id="2_8saeu"]
 [ext_resource type="AudioStream" uid="uid://6v4630hrkeg6" path="res://Audio/Music/Menu.mp3" id="2_853f1"]
+[ext_resource type="Script" uid="uid://c61hc1raouekv" path="res://Scripts/VersionChecker.cs" id="3_ghw46"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tt5f1"]
 font = ExtResource("1_tt5f1")
@@ -140,6 +141,40 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
 text = "Play"
 script = ExtResource("2_8saeu")
 ScenePath = "res://Scenes/Game.tscn"
+
+[node name="VersionText" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("3_ghw46")
+
+[node name="Version" type="Label" parent="VersionText"]
+layout_mode = 0
+offset_left = -680.0
+offset_top = 24.0
+offset_right = 344.0
+offset_bottom = 126.0
+scale = Vector2(0.68, 0.68)
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 81
+text = "Version: {Version Number}"
+horizontal_alignment = 2
+
+[node name="LatestVersion" type="Label" parent="VersionText"]
+layout_mode = 0
+offset_left = -880.0
+offset_top = 104.0
+offset_right = 438.0
+offset_bottom = 206.0
+scale = Vector2(0.68, 0.68)
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 81
+text = "Latest Version: {Version Number}"
+horizontal_alignment = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_853f1")
