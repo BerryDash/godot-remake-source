@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=6 format=3 uid="uid://bg4fa11htun38"]
 
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tt5f1"]
+font = ExtResource("1_tt5f1")
+font_size = 486
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(0.95158, 0.95158, 0.95158, 1)
@@ -58,16 +62,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -342.0
-offset_top = -127.0
-offset_right = 3083.0
-offset_bottom = 648.0
+offset_left = -680.0
+offset_top = -317.0
+offset_right = 1938.0
+offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.200001, 0.200001)
+scale = Vector2(0.52, 0.52)
 theme_override_fonts/font = ExtResource("1_tt5f1")
-theme_override_font_sizes/font_size = 556
+theme_override_font_sizes/font_size = 191
 text = "Berry Dash"
+label_settings = SubResource("LabelSettings_tt5f1")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -79,15 +84,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 159.0
-offset_top = -18.0
-offset_right = 460.0
-offset_bottom = 141.0
+offset_left = 375.0
+offset_top = -85.0
+offset_right = 1038.0
+offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.44, 0.44)
 theme_override_fonts/font = ExtResource("1_tt5f1")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 220
 text = "Godot"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -113,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -37.5
-offset_right = 125.0
-offset_bottom = 37.5
+offset_left = -250.0
+offset_top = -32.0
+offset_right = 250.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -126,7 +131,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_tt5f1")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 56
 theme_override_styles/hover = SubResource("StyleBoxFlat_853f1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8saeu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
