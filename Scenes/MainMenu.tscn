@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=7 format=3 uid="uid://bg4fa11htun38"]
 
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
+[ext_resource type="AudioStream" uid="uid://6v4630hrkeg6" path="res://Audio/Music/Menu.mp3" id="2_853f1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tt5f1"]
 font = ExtResource("1_tt5f1")
@@ -136,3 +137,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_853f1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8saeu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
 text = "Play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_853f1")
+autoplay = true
+parameters/looping = true
