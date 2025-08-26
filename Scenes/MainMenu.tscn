@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=2 format=3 uid="uid://bg4fa11htun38"]
+
+[ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -43,14 +45,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -349.0
+offset_left = -342.0
 offset_top = -127.0
-offset_right = 8376.0
-offset_bottom = 2298.0
+offset_right = 3083.0
+offset_bottom = 648.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.0800014, 0.0800014)
-theme_override_font_sizes/font_size = 1596
+scale = Vector2(0.200001, 0.200001)
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 556
 text = "Berry Dash"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -63,13 +66,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 199.0
-offset_top = 10.0
-offset_right = 499.0
-offset_bottom = 169.0
+offset_left = 159.0
+offset_top = -18.0
+offset_right = 460.0
+offset_bottom = 141.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.44, 0.44)
+theme_override_fonts/font = ExtResource("1_tt5f1")
 theme_override_font_sizes/font_size = 100
 text = "Godot"
 horizontal_alignment = 1
