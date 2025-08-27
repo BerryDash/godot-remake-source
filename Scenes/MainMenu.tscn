@@ -176,6 +176,8 @@ theme_override_font_sizes/font_size = 81
 text = "Latest Version: {Version Number}"
 horizontal_alignment = 2
 
+[node name="HTTPRequest" type="HTTPRequest" parent="VersionText/LatestVersion"]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_853f1")
 autoplay = true
