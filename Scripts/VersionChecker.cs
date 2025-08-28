@@ -10,13 +10,19 @@ public partial class VersionChecker : Control {
 
         VersionLabel.Text = "Version: " + GameVersion;
 
-        HttpRequest GetLatestVersionNode = GetNode<HttpRequest>("LatestVersion/HTTPRequest");
+        if (Globals.VersionChecked) {
+            Label LatestVersionLabel = GetNode<Label>("LatestVersion");
 
-        GetLatestVersionNode.RequestCompleted += OnRequestCompleted;
+            LatestVersionLabel.Text = "Latest Version: " + Globals.LatestVersion;
+        } else {
+            HttpRequest GetLatestVersionNode = GetNode<HttpRequest>("LatestVersion/HTTPRequest");
 
-        string url = "https://berrydash-godot.lncvrt.xyz/database/getLatestVersion.php?version=" + GameVersion;
+            GetLatestVersionNode.RequestCompleted += OnRequestCompleted;
 
-        GetLatestVersionNode.Request(url);
+            string url = "https://berrydash-godot.lncvrt.xyz/database/getLatestVersion.php?version=" + GameVersion;
+
+            GetLatestVersionNode.Request(url);
+        }
     }
 
     private void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body) {
@@ -31,5 +37,15 @@ public partial class VersionChecker : Control {
         Label LatestVersionLabel = GetNode<Label>("LatestVersion");
 
         LatestVersionLabel.Text = "Latest Version: " + Globals.LatestVersion;
+
+        Globals.VersionChecked = true;
+
+        if (Globals.AccessLevel != "all") {
+            var error = GetTree().ChangeSceneToFile("res://Scenes/OutdatedVersion.tscn");
+
+            if (error != Error.Ok) {
+                GD.PrintErr("Failed to change scene: " + error);
+            }
+        }
     }
 }
