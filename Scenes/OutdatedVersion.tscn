@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dggreseg0i3de"]
+[gd_scene load_steps=7 format=3 uid="uid://dggreseg0i3de"]
 
+[ext_resource type="Script" uid="uid://5tcka2u0ra0u" path="res://Scripts/OutdatedVersionLogic.cs" id="1_1ejpl"]
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_4oqe8"]
 [ext_resource type="Script" uid="uid://bc4miccifwrk0" path="res://Scripts/SceneSwitcher.cs" id="2_1ejpl"]
 
@@ -23,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1ejpl")
 
 [node name="Header" type="Control" parent="."]
 layout_mode = 1

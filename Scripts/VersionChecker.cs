@@ -40,7 +40,9 @@ public partial class VersionChecker : Control {
 
         Globals.VersionChecked = true;
 
-        if (Globals.AccessLevel != "all") {
+        string GameVersion = ProjectSettings.GetSetting("application/config/version").AsString();
+
+        if (Globals.AccessLevel != "all" || GameVersion != Globals.LatestVersion) {
             var error = GetTree().ChangeSceneToFile("res://Scenes/OutdatedVersion.tscn");
 
             if (error != Error.Ok) {
