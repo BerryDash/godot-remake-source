@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgt46l5p8qrwc"]
+[gd_scene load_steps=5 format=3 uid="uid://bgt46l5p8qrwc"]
 
 [ext_resource type="Script" uid="uid://dfv3cmvcskd6t" path="res://Scripts/Player.cs" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://5ecdlqnn0u6g" path="res://Textures/Icons/Bird1.png" id="1_iukft"]
+[ext_resource type="Script" uid="uid://bdwdadvx0axam" path="res://Scripts/Berries.cs" id="1_kldst"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5yw3"]
+radius = 117.004
 
 [node name="Game" type="Node2D"]
 
 [node name="Center" type="Node2D" parent="."]
 position = Vector2(960, 540)
+
+[node name="Berries" type="Node2D" parent="."]
+position = Vector2(960, 0)
+script = ExtResource("1_kldst")
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(960, 978)
@@ -15,3 +23,10 @@ script = ExtResource("1_gl6un")
 [node name="Texture" type="Sprite2D" parent="Player"]
 scale = Vector2(1.675, 1.675)
 texture = ExtResource("1_iukft")
+
+[node name="Hitbox" type="Area2D" parent="Player"]
+position = Vector2(-5, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
+shape = SubResource("CircleShape2D_j5yw3")
+debug_color = Color(1, 1, 1, 0.188235)
