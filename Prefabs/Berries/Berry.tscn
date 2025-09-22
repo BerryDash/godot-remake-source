@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://byjsgr18ieauy" path="res://Scripts/BerryLogic.cs" id="1_0wwwo"]
 [ext_resource type="Texture2D" uid="uid://keupgfuijdl7" path="res://Textures/Berries/Berry.png" id="1_g0wxr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
-size = Vector2(183, 203)
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wwwo"]
+radius = 107.52
 
 [node name="Berry" type="Node2D"]
 script = ExtResource("1_0wwwo")
@@ -16,7 +16,7 @@ texture = ExtResource("1_g0wxr")
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="Shape" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_7lihs")
+shape = SubResource("CircleShape2D_0wwwo")
 debug_color = Color(0.713726, 0, 0.321569, 0.156863)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
