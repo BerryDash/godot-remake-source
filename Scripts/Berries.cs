@@ -21,6 +21,16 @@ public partial class Berries : Node2D {
 
             BerryInstance.Position = new Vector2(x: new Random().Next(-(ScreenWidth / 2), ScreenWidth / 2), y: -100 - Position.Y);
 
+            Sprite2D BerrySprite = BerryInstance.GetNode<Sprite2D>("Sprite");
+
+            int BerryChance = new Random().Next(1, 101);
+
+            if (BerryChance <= 80) {
+                BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/Berry.png");
+            } else {
+                BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/UltraBerry.png");
+            }
+
             AddChild(BerryInstance);
         }
 
