@@ -20,6 +20,16 @@ public partial class BerryLogic : Node2D {
             Globals.HighScore += ScoreAdder;
         }
 
+        if (BerryType == "ultra") {
+            if (Globals.ActiveEffect == "ultra") {
+                Globals.EffectTimer += 10f;
+            } else {
+                Globals.EffectTimer = 10f;
+            }
+
+            Globals.ActiveEffect = "ultra";
+        }
+
         QueueFree();
     }
 }

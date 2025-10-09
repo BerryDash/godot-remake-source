@@ -28,5 +28,21 @@ public partial class Player : Node2D {
         }
 
         Position = Pos;
+
+        // Effect handling
+        if (Globals.ActiveEffect != "none") {
+            Globals.EffectTimer -= (float)delta;
+        }
+
+        if (Globals.EffectTimer < 0f) {
+            Globals.EffectTimer = 0f;
+            Globals.ActiveEffect = "none";
+        }
+
+        if (Globals.ActiveEffect == "none") {
+            Globals.MovementSpeed = Globals.DefaultMovementSpeed;
+        } if (Globals.ActiveEffect == "ultra") {
+            Globals.MovementSpeed = Globals.DefaultMovementSpeed * 2f;
+        }
     }
 }
