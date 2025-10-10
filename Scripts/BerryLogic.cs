@@ -12,9 +12,15 @@ public partial class BerryLogic : Node2D {
             BerryType = "normal";
         } else if (Sprite == GD.Load(BerryTexturesFolder + "UltraBerry.png")) {
             BerryType = "ultra";
+        } else if (Sprite == GD.Load(BerryTexturesFolder + "PoisonBerry.png")) {
+            BerryType = "poison";
+        } else if (Sprite == GD.Load(BerryTexturesFolder + "SlowBerry.png")) {
+            BerryType = "slow";
         }
 
-        int ScoreAdder = (BerryType == "normal") ? 1 : 5;
+        int ScoreAdder = (BerryType == "normal") ? 1 :
+            (BerryType == "poison" || BerryType == "slow") ? 0 : 5;
+
         Globals.Score += ScoreAdder;
         if (Globals.Score > Globals.HighScore) {
             Globals.HighScore += ScoreAdder;

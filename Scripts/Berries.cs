@@ -25,8 +25,12 @@ public partial class Berries : Node2D {
 
             int BerryChance = new Random().Next(1, 101);
 
-            if (BerryChance <= 80) {
+            if (BerryChance <= 60) {
                 BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/Berry.png");
+            } else if (BerryChance <= 80) {
+                BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/PoisonBerry.png");
+            } else if (BerryChance <= 90) {
+                BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/SlowBerry.png");
             } else {
                 BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/UltraBerry.png");
             }
