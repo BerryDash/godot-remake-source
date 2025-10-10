@@ -16,6 +16,8 @@ public partial class ScoreText : Control {
             string EffectTimerType = "";
             if (Globals.ActiveEffect == "ultra") {
                 EffectTimerType = "Boost";
+            } else if (Globals.ActiveEffect == "slow") {
+                EffectTimerType = "Slowness";
             }
             EffectTimerText.Text = EffectTimerType + " " + "expires in: " + Math.Floor(Globals.EffectTimer * 10) / 10 + "s";
         }

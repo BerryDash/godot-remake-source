@@ -41,8 +41,10 @@ public partial class Player : Node2D {
 
         if (Globals.ActiveEffect == "none") {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed;
-        } if (Globals.ActiveEffect == "ultra") {
+        } else if (Globals.ActiveEffect == "ultra") {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed * 2f;
+        } else if (Globals.ActiveEffect == "slow") {
+            Globals.MovementSpeed = Globals.DefaultMovementSpeed / 2f;
         }
     }
 }

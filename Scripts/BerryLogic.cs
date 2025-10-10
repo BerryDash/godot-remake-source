@@ -29,6 +29,14 @@ public partial class BerryLogic : Node2D {
         if (BerryType == "poison") {
             Globals.EffectTimer = 0f;
             Globals.Score = 0;
+        } else if (BerryType == "slow") {
+            if (Globals.ActiveEffect == "slow") {
+                Globals.EffectTimer += 10f;
+            } else {
+                Globals.EffectTimer = 10f;
+            }
+
+            Globals.ActiveEffect = "slow";
         } else if (BerryType == "ultra") {
             if (Globals.ActiveEffect == "ultra") {
                 Globals.EffectTimer += 10f;
