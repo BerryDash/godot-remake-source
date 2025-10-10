@@ -3,6 +3,7 @@ using System;
 
 public partial class Player : Node2D {
     private float ScreenBorders = 120f;
+    private float VelocityY = 0f;
 
     public override void _Ready() {
         Position = new Vector2(x: DisplayServer.WindowGetSize().X / 2, y: 0);
@@ -14,7 +15,7 @@ public partial class Player : Node2D {
         var WindowScale = WindowSize / ScreenSize;
 
         Vector2 Pos = Position;
-        Pos.Y = (WindowSize.Y / WindowScale.Y) - 100;
+        // Pos.Y = (WindowSize.Y / WindowScale.Y) - 100;
 
         if ((Input.IsKeyPressed((Key)Key.Left) || Input.IsKeyPressed((Key)Key.A)) && Pos.X > ScreenBorders) {
             GetNode<Sprite2D>("Texture").FlipH = false;
@@ -25,6 +26,21 @@ public partial class Player : Node2D {
         if ((Input.IsKeyPressed((Key)Key.Right) || Input.IsKeyPressed((Key)Key.D)) && Pos.X < ScreenWidth) {
             GetNode<Sprite2D>("Texture").FlipH = true;
             Pos.X += Globals.MovementSpeed * (float)delta;
+        }
+
+        if (Input.IsKeyPressed((Key)Key.Space) && Pos.Y >= 976) {
+            VelocityY = Globals.JumpHeight;
+        }
+
+        if (VelocityY < 0.3f) {
+            VelocityY += Globals.Gravity;
+        }
+
+        Pos.Y += VelocityY;
+
+        if (Pos.Y > 976) {
+            Pos.Y = 976;
+            VelocityY = 0;
         }
 
         Position = Pos;
