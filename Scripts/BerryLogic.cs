@@ -26,7 +26,10 @@ public partial class BerryLogic : Node2D {
             Globals.HighScore += ScoreAdder;
         }
 
-        if (BerryType == "ultra") {
+        if (BerryType == "poison") {
+            Globals.EffectTimer = 0f;
+            Globals.Score = 0;
+        } else if (BerryType == "ultra") {
             if (Globals.ActiveEffect == "ultra") {
                 Globals.EffectTimer += 10f;
             } else {
