@@ -1,13 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgt46l5p8qrwc"]
+[gd_scene load_steps=16 format=3 uid="uid://bgt46l5p8qrwc"]
 
 [ext_resource type="Script" uid="uid://dfv3cmvcskd6t" path="res://Scripts/Player.cs" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://5ecdlqnn0u6g" path="res://Textures/Icons/Bird1.png" id="1_iukft"]
 [ext_resource type="Script" uid="uid://bdwdadvx0axam" path="res://Scripts/Berries.cs" id="1_kldst"]
 [ext_resource type="Script" uid="uid://drbmu7lilwrec" path="res://Scripts/ScoreText.cs" id="4_b2bpf"]
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="4_kldst"]
+[ext_resource type="AudioStream" uid="uid://cryo6mtltnnyk" path="res://Audio/Music/Game/PixelPeekerPolka.mp3" id="6_fgofq"]
+[ext_resource type="AudioStream" uid="uid://btl7lrqmikaro" path="res://Audio/Music/Game/FluffingADuck.mp3" id="7_2irst"]
+[ext_resource type="AudioStream" uid="uid://js133askfgfd" path="res://Audio/Music/Game/AmazingPlan.mp3" id="8_3cx6b"]
+[ext_resource type="AudioStream" uid="uid://dnnjkxgsh0vf6" path="res://Audio/Music/Game/Hyperfun.mp3" id="9_wxwew"]
+[ext_resource type="AudioStream" uid="uid://cds2k1ijtf5ol" path="res://Audio/Music/Game/QuirkyDog.mp3" id="10_acvyw"]
+[ext_resource type="AudioStream" uid="uid://em0ro3lwpp0a" path="res://Audio/Music/Game/Wallpaper.mp3" id="11_alh3a"]
+[ext_resource type="AudioStream" uid="uid://c51he0x017y6d" path="res://Audio/Music/Game/WhoLikesToParty.mp3" id="12_4q8tf"]
+[ext_resource type="AudioStream" uid="uid://g432tiqm4b41" path="res://Audio/Music/Game/LatinIndustries.mp3" id="13_x3xnh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5yw3"]
 radius = 117.004
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_bf53h"]
+fade_time = 0.0
+stream_count = 8
+stream_0 = ExtResource("6_fgofq")
+stream_1 = ExtResource("7_2irst")
+stream_2 = ExtResource("8_3cx6b")
+stream_3 = ExtResource("9_wxwew")
+stream_4 = ExtResource("10_acvyw")
+stream_5 = ExtResource("11_alh3a")
+stream_6 = ExtResource("12_4q8tf")
+stream_7 = ExtResource("13_x3xnh")
 
 [node name="Game" type="Node2D"]
 
@@ -95,3 +115,7 @@ theme_override_font_sizes/font_size = 156
 text = "{Effect} expires in: {Time}"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_bf53h")
+autoplay = true
