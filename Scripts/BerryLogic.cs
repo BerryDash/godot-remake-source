@@ -29,7 +29,7 @@ public partial class BerryLogic : Node2D {
         AudioStreamPlayer BerrySoundPlayer = GetNode<AudioStreamPlayer>("/root/Game/BerrySoundPlayer");
         if (BerryType == "normal") {
             BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Eat.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 8f;
+            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.08f;
             BerrySoundPlayer.Play();
         } else if (BerryType == "poison") {
             Globals.EffectTimer = 0f;
@@ -38,7 +38,7 @@ public partial class BerryLogic : Node2D {
             BazookaManager.Write(BazookaManager.HighScore, Globals.HighScore.ToString());
 
             BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Death.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 5f;
+            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.05f;
             BerrySoundPlayer.Play();
         } else if (BerryType == "slow") {
             if (Globals.ActiveEffect == "slow") {
@@ -50,7 +50,7 @@ public partial class BerryLogic : Node2D {
             Globals.ActiveEffect = "slow";
 
             BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Downgrade.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.5f;
+            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
             BerrySoundPlayer.Play();
         } else if (BerryType == "ultra") {
             if (Globals.ActiveEffect == "ultra") {
@@ -62,7 +62,7 @@ public partial class BerryLogic : Node2D {
             Globals.ActiveEffect = "ultra";
 
             BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Powerup.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.5f;
+            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
             BerrySoundPlayer.Play();
         }
 

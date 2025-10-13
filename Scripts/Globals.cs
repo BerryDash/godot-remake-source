@@ -20,5 +20,5 @@ public partial class Globals : Node {
     public static int HighScore = 0;
     public static bool IsPaused = false;
 
-    public static float SoundEffectVolume = 1f;
+    public static float SoundEffectVolume = 100f;
 }
