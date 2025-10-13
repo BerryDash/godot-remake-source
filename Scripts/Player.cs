@@ -65,7 +65,7 @@ public partial class Player : Node2D {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed / 2f;
         }
 
-        if (Input.IsActionJustPressed("EscapeKey")) {
+        if (Input.IsActionJustPressed("EscapeKey") && !Globals.IsPaused) {
             PackedScene PauseMenu = GD.Load<PackedScene>("res://Scenes/PauseMenu.tscn");
 
             Control PauseMenuInstance = PauseMenu.Instantiate<Control>();
