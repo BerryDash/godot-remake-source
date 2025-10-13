@@ -34,11 +34,11 @@ public partial class Player : Node2D {
             }
         }
 
-        if (VelocityY < 0.3f) {
-            VelocityY += Globals.Gravity;
+        if (true) {
+            VelocityY += Globals.Gravity * (float)delta;
         }
 
-        Pos.Y += VelocityY;
+        Pos.Y += VelocityY * (float)delta;
 
         if (Pos.Y > 976) {
             Pos.Y = 976;
