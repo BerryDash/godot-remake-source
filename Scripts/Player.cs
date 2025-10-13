@@ -75,6 +75,10 @@ public partial class Player : Node2D {
 
             GetNode<CanvasLayer>("/root/Game/CanvasLayer").AddChild(PauseMenuInstance);
             Globals.IsPaused = true;
+
+            AudioStreamPlayer MusicPlayer = GetNode<AudioStreamPlayer>("/root/Game/MusicPlayer");
+
+            MusicPlayer.StreamPaused = !MusicPlayer.StreamPaused;
         }
     }
 }
