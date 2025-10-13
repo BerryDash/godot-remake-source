@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctb5p8ymhcshq"]
+
+[ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_flfri"]
+[ext_resource type="Script" uid="uid://bc4miccifwrk0" path="res://Scripts/SceneSwitcher.cs" id="2_yrknh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1nw0"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjqtt"]
+bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppjuv"]
+bg_color = Color(0.95158, 0.95158, 0.95158, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 540.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_flfri")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_w1nw0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mjqtt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ppjuv")
+text = "Back"
+script = ExtResource("2_yrknh")
+ScenePath = "res://Scenes/MainMenu.tscn"

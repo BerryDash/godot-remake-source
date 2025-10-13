@@ -116,19 +116,21 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Play" type="Button" parent="Center/Buttons"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/Buttons"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -32.0
-offset_right = 250.0
-offset_bottom = 118.0
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 138.0
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="Center/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -143,6 +145,24 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_853f1")
 text = "Play"
 script = ExtResource("2_8saeu")
 ScenePath = "res://Scenes/Game.tscn"
+
+[node name="Settings" type="Button" parent="Center/Buttons/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8saeu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_853f1")
+text = "Settings"
+script = ExtResource("2_8saeu")
+ScenePath = "res://Scenes/Settings.tscn"
 
 [node name="VersionText" type="Control" parent="."]
 layout_mode = 1
