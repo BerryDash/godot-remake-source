@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgt46l5p8qrwc"]
+[gd_scene load_steps=17 format=3 uid="uid://bgt46l5p8qrwc"]
 
 [ext_resource type="Script" uid="uid://dfv3cmvcskd6t" path="res://Scripts/Player.cs" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://5ecdlqnn0u6g" path="res://Textures/Icons/Bird1.png" id="1_iukft"]
 [ext_resource type="Script" uid="uid://bdwdadvx0axam" path="res://Scripts/Berries.cs" id="1_kldst"]
 [ext_resource type="Script" uid="uid://drbmu7lilwrec" path="res://Scripts/ScoreText.cs" id="4_b2bpf"]
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="4_kldst"]
+[ext_resource type="AudioStream" uid="uid://7ahbsuq3jt4v" path="res://Audio/SFX/Jump.mp3" id="4_wxwew"]
 [ext_resource type="AudioStream" uid="uid://cryo6mtltnnyk" path="res://Audio/Music/Game/PixelPeekerPolka.mp3" id="6_fgofq"]
 [ext_resource type="AudioStream" uid="uid://btl7lrqmikaro" path="res://Audio/Music/Game/FluffingADuck.mp3" id="7_2irst"]
 [ext_resource type="AudioStream" uid="uid://js133askfgfd" path="res://Audio/Music/Game/AmazingPlan.mp3" id="8_3cx6b"]
@@ -52,6 +53,9 @@ position = Vector2(-5, 23)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hitbox"]
 shape = SubResource("CircleShape2D_j5yw3")
 debug_color = Color(1, 1, 1, 0.188235)
+
+[node name="JumpSoundPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("4_wxwew")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

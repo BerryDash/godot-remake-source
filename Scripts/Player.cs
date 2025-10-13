@@ -31,6 +31,7 @@ public partial class Player : Node2D {
 
             if (Input.IsKeyPressed((Key)Key.Space) && Pos.Y >= 976) {
                 VelocityY = Globals.JumpHeight;
+                GetNode<AudioStreamPlayer>("JumpSoundPlayer").Play();
             }
         }
 
