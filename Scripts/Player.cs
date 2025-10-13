@@ -6,7 +6,11 @@ public partial class Player : Node2D {
     private float VelocityY = 0f;
 
     public override void _Ready() {
-        Position = new Vector2(x: DisplayServer.WindowGetSize().X / 2, y: 0);
+        var ScreenSize = GetViewport().GetVisibleRect().Size;
+        var WindowSize = DisplayServer.WindowGetSize();
+        var WindowScale = WindowSize / ScreenSize;
+
+        Position = new Vector2(x: DisplayServer.WindowGetSize().X / 2, y: (WindowSize.Y / WindowScale.Y) - 100);
     }
 
     public override void _Process(double delta) {
@@ -15,7 +19,6 @@ public partial class Player : Node2D {
         var WindowScale = WindowSize / ScreenSize;
 
         Vector2 Pos = Position;
-        // Pos.Y = (WindowSize.Y / WindowScale.Y) - 100;
 
         if (!Globals.IsPaused) {
             if ((Input.IsKeyPressed((Key)Key.Left) || Input.IsKeyPressed((Key)Key.A)) && Pos.X > ScreenBorders) {
