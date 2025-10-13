@@ -34,7 +34,7 @@ public partial class Player : Node2D {
             }
         }
 
-        if (true) {
+        if (VelocityY < 600f) {
             VelocityY += Globals.Gravity * (float)delta;
         }
 

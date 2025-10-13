@@ -8,9 +8,9 @@ public partial class Globals : Node {
 
     public static float MovementSpeed = 800f;
     public static float DefaultMovementSpeed = MovementSpeed;
-    public static float JumpHeight = -1000f;
+    public static float JumpHeight = -1200f;
     public static float DefaultJumpHeight = JumpHeight;
-    public static float Gravity = 2000f;
+    public static float Gravity = 3000f;
     public static float DefaultGravity = JumpHeight;
 
     public static string ActiveEffect = "none";
