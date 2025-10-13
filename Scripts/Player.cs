@@ -17,19 +17,21 @@ public partial class Player : Node2D {
         Vector2 Pos = Position;
         // Pos.Y = (WindowSize.Y / WindowScale.Y) - 100;
 
-        if ((Input.IsKeyPressed((Key)Key.Left) || Input.IsKeyPressed((Key)Key.A)) && Pos.X > ScreenBorders) {
-            GetNode<Sprite2D>("Texture").FlipH = false;
-            Pos.X -= Globals.MovementSpeed * (float)delta;
-        }
+        if (!Globals.IsPaused) {
+            if ((Input.IsKeyPressed((Key)Key.Left) || Input.IsKeyPressed((Key)Key.A)) && Pos.X > ScreenBorders) {
+                GetNode<Sprite2D>("Texture").FlipH = false;
+                Pos.X -= Globals.MovementSpeed * (float)delta;
+            }
 
-        float ScreenWidth = (WindowSize.X / WindowScale.X) - ScreenBorders;
-        if ((Input.IsKeyPressed((Key)Key.Right) || Input.IsKeyPressed((Key)Key.D)) && Pos.X < ScreenWidth) {
-            GetNode<Sprite2D>("Texture").FlipH = true;
-            Pos.X += Globals.MovementSpeed * (float)delta;
-        }
+            float ScreenWidth = (WindowSize.X / WindowScale.X) - ScreenBorders;
+            if ((Input.IsKeyPressed((Key)Key.Right) || Input.IsKeyPressed((Key)Key.D)) && Pos.X < ScreenWidth) {
+                GetNode<Sprite2D>("Texture").FlipH = true;
+                Pos.X += Globals.MovementSpeed * (float)delta;
+            }
 
-        if (Input.IsKeyPressed((Key)Key.Space) && Pos.Y >= 976) {
-            VelocityY = Globals.JumpHeight;
+            if (Input.IsKeyPressed((Key)Key.Space) && Pos.Y >= 976) {
+                VelocityY = Globals.JumpHeight;
+            }
         }
 
         if (VelocityY < 0.3f) {
@@ -46,7 +48,7 @@ public partial class Player : Node2D {
         Position = Pos;
 
         // Effect handling
-        if (Globals.ActiveEffect != "none") {
+        if (Globals.ActiveEffect != "none" && !Globals.IsPaused) {
             Globals.EffectTimer -= (float)delta;
         }
 
@@ -61,6 +63,18 @@ public partial class Player : Node2D {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed * 2f;
         } else if (Globals.ActiveEffect == "slow") {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed / 2f;
+        }
+
+        if (Input.IsActionJustPressed("EscapeKey")) {
+            PackedScene PauseMenu = GD.Load<PackedScene>("res://Scenes/PauseMenu.tscn");
+
+            Control PauseMenuInstance = PauseMenu.Instantiate<Control>();
+
+            PauseMenuInstance.Position = new Vector2(x: 0, y: 0);
+            PauseMenuInstance.ZIndex = -1;
+
+            GetNode<CanvasLayer>("/root/Game/CanvasLayer").AddChild(PauseMenuInstance);
+            Globals.IsPaused = true;
         }
     }
 }

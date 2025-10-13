@@ -6,9 +6,12 @@ public partial class Berries : Node2D {
 
     public override void _Process(double delta) {
         Vector2 Pos = Position;
-        Pos.Y += 500f * (float)delta;
 
-        SpawnBerryTimer += (float)delta;
+        if (!Globals.IsPaused) {
+            Pos.Y += 500f * (float)delta;
+
+            SpawnBerryTimer += (float)delta;
+        }
 
         int ScreenWidth = DisplayServer.WindowGetSize().X;
 
