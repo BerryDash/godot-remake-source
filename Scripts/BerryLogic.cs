@@ -29,6 +29,8 @@ public partial class BerryLogic : Node2D {
         if (BerryType == "poison") {
             Globals.EffectTimer = 0f;
             Globals.Score = 0;
+
+            BazookaManager.Write(BazookaManager.HighScore, Globals.HighScore.ToString());
         } else if (BerryType == "slow") {
             if (Globals.ActiveEffect == "slow") {
                 Globals.EffectTimer += 10f;
