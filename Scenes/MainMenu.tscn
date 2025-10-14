@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=12 format=3 uid="uid://bg4fa11htun38"]
 
 [ext_resource type="Script" uid="uid://crsloi4abxhqh" path="res://Scripts/LoadSaveFIle.cs" id="1_df05h"]
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
@@ -19,9 +19,31 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8saeu"]
 bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(0.95158, 0.95158, 0.95158, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df05h"]
+bg_color = Color(0.953125, 0.953125, 0.953125, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8um5k"]
+bg_color = Color(0.51171875, 0.51171875, 0.51171875, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -159,10 +181,31 @@ theme_override_fonts/font = ExtResource("1_tt5f1")
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8saeu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_853f1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_df05h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8um5k")
+disabled = true
 text = "Settings"
 script = ExtResource("2_8saeu")
 ScenePath = "res://Scenes/Settings.tscn"
+
+[node name="Label" type="Label" parent="Center/Buttons/HBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -57.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.9609375, 0, 1)
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 35
+text = "Coming Soon!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VersionText" type="Control" parent="."]
 layout_mode = 1

@@ -14,9 +14,17 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w4ur"]
 bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ey1tb"]
 bg_color = Color(0.95158, 0.95158, 0.95158, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3

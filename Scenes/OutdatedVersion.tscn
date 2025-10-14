@@ -4,14 +4,22 @@
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_4oqe8"]
 [ext_resource type="Script" uid="uid://bc4miccifwrk0" path="res://Scripts/SceneSwitcher.cs" id="2_1ejpl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fy1fk"]
-bg_color = Color(0.95158, 0.95158, 0.95158, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d7pb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsdot"]
 bg_color = Color(0.830335, 0.830335, 0.830335, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d7pb"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fy1fk"]
+bg_color = Color(0.95158, 0.95158, 0.95158, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -105,17 +113,17 @@ offset_right = 250.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_4oqe8")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/hover = SubResource("StyleBoxFlat_fy1fk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hsdot")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0d7pb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hsdot")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fy1fk")
 text = "Update"
 
 [node name="ContinueButton" type="Button" parent="Buttons"]
@@ -131,17 +139,17 @@ offset_right = 250.0
 offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_4oqe8")
 theme_override_font_sizes/font_size = 56
-theme_override_styles/hover = SubResource("StyleBoxFlat_fy1fk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hsdot")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0d7pb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hsdot")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fy1fk")
 text = "Continue"
 script = ExtResource("2_1ejpl")
 ScenePath = "res://Scenes/MainMenu.tscn"
