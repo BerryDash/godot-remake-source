@@ -14,7 +14,7 @@ config/name="Berry Dash Godot Remake"
 config/version="1.0.0"
 run/main_scene="uid://bg4fa11htun38"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
