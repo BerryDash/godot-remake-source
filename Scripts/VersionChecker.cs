@@ -19,9 +19,11 @@ public partial class VersionChecker : Control {
 
             GetLatestVersionNode.RequestCompleted += OnRequestCompleted;
 
-            string url = "https://berrydash-godot.lncvrt.xyz/database/getLatestVersion.php?version=" + GameVersion;
-
-            GetLatestVersionNode.Request(url);
+            GetLatestVersionNode.Request("https://games.lncvrt.xyz/database/canLoadClient.php", [
+                "Requester: BerryDashClient",
+                "ClientVersion: " + GameVersion,
+                "ClientPlatform: " + OS.GetName()
+            ]);
         }
     }
 
