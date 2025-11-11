@@ -16,10 +16,13 @@ public partial class BerryLogic : Node2D {
             BerryType = "poison";
         } else if (Sprite == GD.Load(BerryTexturesFolder + "SlowBerry.png")) {
             BerryType = "slow";
+        } else if (Sprite == GD.Load(BerryTexturesFolder + "SpeedyBerry.png")) {
+            BerryType = "speedy";
         }
 
         int ScoreAdder = (BerryType == "normal") ? 1 :
-            (BerryType == "poison" || BerryType == "slow") ? 0 : 5;
+            (BerryType == "poison" || BerryType == "slow") ? 0 :
+            (BerryType == "speedy") ? 10 : 0;
 
         Globals.Score += ScoreAdder;
         if (Globals.Score > Globals.HighScore) {
@@ -62,6 +65,18 @@ public partial class BerryLogic : Node2D {
             Globals.ActiveEffect = "ultra";
 
             BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Powerup.mp3");
+            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
+            BerrySoundPlayer.Play();
+        } else if (BerryType == "speedy") {
+            if (Globals.ActiveEffect == "speedy") {
+                Globals.EffectTimer += 10f;
+            } else {
+                Globals.EffectTimer = 10f;
+            }
+
+            Globals.ActiveEffect = "speedy";
+
+            BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/SpeedyPowerup.mp3");
             BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
             BerrySoundPlayer.Play();
         }

@@ -63,10 +63,16 @@ public partial class Player : Node2D {
 
         if (Globals.ActiveEffect == "none") {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed;
+            Globals.BerrySpeed = Globals.DefaultBerrySpeed;
         } else if (Globals.ActiveEffect == "ultra") {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed * 2f;
+            Globals.BerrySpeed = Globals.DefaultBerrySpeed;
         } else if (Globals.ActiveEffect == "slow") {
             Globals.MovementSpeed = Globals.DefaultMovementSpeed / 2f;
+            Globals.BerrySpeed = Globals.DefaultBerrySpeed;
+        } else if (Globals.ActiveEffect == "speedy") {
+            Globals.MovementSpeed = Globals.DefaultMovementSpeed * 2f;
+            Globals.BerrySpeed = Globals.DefaultBerrySpeed * 2f;
         }
 
         if (Input.IsActionJustPressed("EscapeKey") && !Globals.IsPaused) {

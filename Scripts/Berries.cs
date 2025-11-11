@@ -8,7 +8,7 @@ public partial class Berries : Node2D {
         Vector2 Pos = Position;
 
         if (!Globals.IsPaused) {
-            Pos.Y += 500f * (float)delta;
+            Pos.Y += Globals.BerrySpeed * (float)delta;
 
             SpawnBerryTimer += (float)delta;
         }
@@ -30,12 +30,14 @@ public partial class Berries : Node2D {
 
             if (BerryChance <= 60) {
                 BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/Berry.png");
-            } else if (BerryChance <= 80) {
+            } else if (BerryChance <= 75) {
                 BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/PoisonBerry.png");
-            } else if (BerryChance <= 90) {
+            } else if (BerryChance <= 85) {
                 BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/SlowBerry.png");
-            } else {
+            } else if (BerryChance <= 95) {
                 BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/UltraBerry.png");
+            } else {
+                BerrySprite.Texture = (Texture2D)GD.Load("res://Textures/Berries/SpeedyBerry.png");
             }
 
             AddChild(BerryInstance);
