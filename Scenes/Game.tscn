@@ -123,5 +123,3 @@ vertical_alignment = 1
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_bf53h")
 autoplay = true
-
-[node name="BerrySoundPlayer" type="AudioStreamPlayer" parent="."]

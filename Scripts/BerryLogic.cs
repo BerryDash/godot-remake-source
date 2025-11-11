@@ -4,6 +4,16 @@ using System;
 public partial class BerryLogic : Node2D {
     string BerryType = "";
 
+    void PlaySound(string path, float volume) {
+        var player = new AudioStreamPlayer();
+        player.Stream = (AudioStream)GD.Load(path);
+        player.VolumeDb = Globals.SoundEffectVolume * (volume / 1000);
+        GetNode<Node2D>("/root/Game").AddChild(player);
+        player.Play();
+
+        player.Finished += () => player.QueueFree(); // clean up after playing
+    }
+
     private void _on_hitbox_area_entered(Area2D area) {
         Texture2D Sprite = GetNode<Sprite2D>("Sprite").Texture;
 
@@ -29,20 +39,15 @@ public partial class BerryLogic : Node2D {
             Globals.HighScore += ScoreAdder;
         }
 
-        AudioStreamPlayer BerrySoundPlayer = GetNode<AudioStreamPlayer>("/root/Game/BerrySoundPlayer");
         if (BerryType == "normal") {
-            BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Eat.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.08f;
-            BerrySoundPlayer.Play();
+            PlaySound("res://Audio/SFX/Eat.mp3", 80f);
         } else if (BerryType == "poison") {
             Globals.EffectTimer = 0f;
             Globals.Score = 0;
 
             BazookaManager.Write(BazookaManager.HighScore, Globals.HighScore.ToString());
 
-            BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Death.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.05f;
-            BerrySoundPlayer.Play();
+            PlaySound("res://Audio/SFX/Death.mp3", 20f);
         } else if (BerryType == "slow") {
             if (Globals.ActiveEffect == "slow") {
                 Globals.EffectTimer += 10f;
@@ -52,9 +57,7 @@ public partial class BerryLogic : Node2D {
 
             Globals.ActiveEffect = "slow";
 
-            BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Downgrade.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
-            BerrySoundPlayer.Play();
+            PlaySound("res://Audio/SFX/Downgrade.mp3", 5f);
         } else if (BerryType == "ultra") {
             if (Globals.ActiveEffect == "ultra") {
                 Globals.EffectTimer += 10f;
@@ -64,9 +67,7 @@ public partial class BerryLogic : Node2D {
 
             Globals.ActiveEffect = "ultra";
 
-            BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/Powerup.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
-            BerrySoundPlayer.Play();
+            PlaySound("res://Audio/SFX/Powerup.mp3", 5f);
         } else if (BerryType == "speedy") {
             if (Globals.ActiveEffect == "speedy") {
                 Globals.EffectTimer += 10f;
@@ -76,9 +77,7 @@ public partial class BerryLogic : Node2D {
 
             Globals.ActiveEffect = "speedy";
 
-            BerrySoundPlayer.Stream = (AudioStream)GD.Load("res://Audio/SFX/SpeedyPowerup.mp3");
-            BerrySoundPlayer.VolumeDb = Globals.SoundEffectVolume * 0.005f;
-            BerrySoundPlayer.Play();
+            PlaySound("res://Audio/SFX/SpeedyPowerup.mp3", 5f);
         }
 
         QueueFree();
