@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Player : Node2D {
     private float ScreenBorders = 120f;
@@ -21,18 +20,18 @@ public partial class Player : Node2D {
         Vector2 Pos = Position;
 
         if (!Globals.IsPaused) {
-            if ((Input.IsKeyPressed((Key)Key.Left) || Input.IsKeyPressed((Key)Key.A)) && Pos.X > ScreenBorders) {
+            if ((Input.IsKeyPressed(Key.Left) || Input.IsKeyPressed(Key.A)) && Pos.X > ScreenBorders) {
                 GetNode<Sprite2D>("Texture").FlipH = false;
                 Pos.X -= Globals.MovementSpeed * (float)delta;
             }
 
             float ScreenWidth = (WindowSize.X / WindowScale.X) - ScreenBorders;
-            if ((Input.IsKeyPressed((Key)Key.Right) || Input.IsKeyPressed((Key)Key.D)) && Pos.X < ScreenWidth) {
+            if ((Input.IsKeyPressed(Key.Right) || Input.IsKeyPressed(Key.D)) && Pos.X < ScreenWidth) {
                 GetNode<Sprite2D>("Texture").FlipH = true;
                 Pos.X += Globals.MovementSpeed * (float)delta;
             }
 
-            if (Input.IsKeyPressed((Key)Key.Space) && Pos.Y >= 976) {
+            if (Input.IsKeyPressed(Key.Space) && Pos.Y >= 976) {
                 VelocityY = Globals.JumpHeight;
                 GetNode<AudioStreamPlayer>("JumpSoundPlayer").Play();
             }

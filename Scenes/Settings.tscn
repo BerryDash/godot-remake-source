@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctb5p8ymhcshq"]
+[gd_scene load_steps=9 format=3 uid="uid://ctb5p8ymhcshq"]
 
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_flfri"]
 [ext_resource type="Script" uid="uid://bc4miccifwrk0" path="res://Scripts/SceneSwitcher.cs" id="2_yrknh"]
+[ext_resource type="Script" uid="uid://jpjswk46hc64" path="res://Scripts/SettingsContainer.cs" id="3_mjqtt"]
 [ext_resource type="Texture2D" uid="uid://c0gvup8f48soq" path="res://Textures/MenuIcons/square-check-solid-full-recolored.svg" id="3_w1nw0"]
 [ext_resource type="Texture2D" uid="uid://uph0cthbcrxs" path="res://Textures/MenuIcons/square-solid-full.svg" id="4_mjqtt"]
 
@@ -62,6 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 179
 alignment = 1
+script = ExtResource("3_mjqtt")
 
 [node name="Fullscreen" type="Control" parent="SettingsContainer"]
 layout_mode = 2
@@ -102,10 +104,10 @@ theme_override_font_sizes/font_size = 76
 text = "Fullscreen"
 vertical_alignment = 1
 
-[node name="Vsync" type="Control" parent="SettingsContainer"]
+[node name="VSync" type="Control" parent="SettingsContainer"]
 layout_mode = 2
 
-[node name="CheckBox" type="CheckBox" parent="SettingsContainer/Vsync"]
+[node name="CheckBox" type="CheckBox" parent="SettingsContainer/VSync"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -123,7 +125,7 @@ theme_override_icons/checked = ExtResource("3_w1nw0")
 theme_override_icons/unchecked = ExtResource("4_mjqtt")
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="SettingsContainer/Vsync"]
+[node name="Label" type="Label" parent="SettingsContainer/VSync"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -179,3 +181,7 @@ theme_override_fonts/font = ExtResource("1_flfri")
 theme_override_font_sizes/font_size = 76
 text = "Show FPS"
 vertical_alignment = 1
+
+[connection signal="toggled" from="SettingsContainer/Fullscreen/CheckBox" to="SettingsContainer" method="Fullscreen_Toggled"]
+[connection signal="toggled" from="SettingsContainer/VSync/CheckBox" to="SettingsContainer" method="VSync_Toggled"]
+[connection signal="toggled" from="SettingsContainer/ShowFPS/CheckBox" to="SettingsContainer" method="ShowFPS_Toggled"]

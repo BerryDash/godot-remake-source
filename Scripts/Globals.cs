@@ -1,10 +1,9 @@
 using Godot;
-using System;
 
 public partial class Globals : Node {
     public static string LatestVersion = "";
     public static string AccessLevel = "";
-    public static bool VersionChecked = false;
+    public static bool FirstLoadDone = false;
 
     public static float MovementSpeed = 800f;
     public static float DefaultMovementSpeed = MovementSpeed;
