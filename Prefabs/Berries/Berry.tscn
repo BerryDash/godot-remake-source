@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://keupgfuijdl7" path="res://Textures/Berries/Berry.png" id="1_g0wxr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0wwwo"]
-radius = 60.074955
+radius = 68.007355
 
 [node name="Berry" type="Node2D"]
 script = ExtResource("1_0wwwo")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_g0wxr")
 
 [node name="Hitbox" type="Area2D" parent="."]
