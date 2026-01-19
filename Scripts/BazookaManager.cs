@@ -2,6 +2,7 @@ using Godot;
 
 public partial class BazookaManager : Node {
     public static string HighScore = "0";
+    public static string Settings = "1";
 
     public static string Read(string saveKey, string defaultValue) {
         string path = "user://" + saveKey + ".txt";

@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class OutdatedVersionLogic : Control {
     public override void _Ready() {

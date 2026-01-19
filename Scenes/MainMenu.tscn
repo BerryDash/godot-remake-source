@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bg4fa11htun38"]
+[gd_scene load_steps=11 format=3 uid="uid://bg4fa11htun38"]
 
-[ext_resource type="Script" uid="uid://crsloi4abxhqh" path="res://Scripts/LoadSaveFIle.cs" id="1_df05h"]
+[ext_resource type="Script" uid="uid://cyo278cd6hfm" path="res://Scripts/FirstLoad.cs" id="1_ghw46"]
 [ext_resource type="FontFile" uid="uid://dq7nkk7n7wrq4" path="res://Fonts/Lexend.ttf" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://bc4miccifwrk0" path="res://Scripts/SceneSwitcher.cs" id="2_8saeu"]
 [ext_resource type="AudioStream" uid="uid://6v4630hrkeg6" path="res://Audio/Music/Menu.mp3" id="2_853f1"]
-[ext_resource type="Script" uid="uid://c61hc1raouekv" path="res://Scripts/VersionChecker.cs" id="3_ghw46"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tt5f1"]
 font = ExtResource("1_tt5f1")
@@ -52,7 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_df05h")
+script = ExtResource("1_ghw46")
 
 [node name="Center" type="Control" parent="."]
 layout_mode = 1
@@ -183,29 +182,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8saeu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_df05h")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_8um5k")
-disabled = true
 text = "Settings"
 script = ExtResource("2_8saeu")
 ScenePath = "res://Scenes/Settings.tscn"
-
-[node name="Label" type="Label" parent="Center/Buttons/HBoxContainer/Settings"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -57.0
-offset_right = 250.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 0.9609375, 0, 1)
-theme_override_fonts/font = ExtResource("1_tt5f1")
-theme_override_font_sizes/font_size = 35
-text = "Coming Soon!"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="VersionText" type="Control" parent="."]
 layout_mode = 1
@@ -215,7 +194,6 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-script = ExtResource("3_ghw46")
 
 [node name="Version" type="Label" parent="VersionText"]
 layout_mode = 0

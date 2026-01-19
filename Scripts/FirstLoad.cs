@@ -1,21 +1,27 @@
 using Godot;
-using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Linq;
 
-public partial class VersionChecker : Control {
+public partial class FirstLoad : Control {
     public override void _Ready() {
-        Label VersionLabel = GetNode<Label>("Version");
+        Label VersionLabel = GetNode<Label>("VersionText/Version");
         string GameVersion = ProjectSettings.GetSetting("application/config/version").AsString();
 
         VersionLabel.Text = "Version: " + GameVersion;
 
-        if (Globals.VersionChecked) {
-            Label LatestVersionLabel = GetNode<Label>("LatestVersion");
+        if (Globals.FirstLoadDone) {
+            Label LatestVersionLabel = GetNode<Label>("VersionText/LatestVersion");
 
             LatestVersionLabel.Text = "Latest Version: " + Globals.LatestVersion;
         } else {
-            HttpRequest GetLatestVersionNode = GetNode<HttpRequest>("LatestVersion/HTTPRequest");
+            //Load settings
+            List<string> settings = Utils.LoadSettings();
+            string fullscreen = settings.ElementAtOrDefault(0) ?? "1";
+            Utils.ToggleFullscreen(fullscreen == "1", settings); //This will also load VSync
+
+            //Version checking
+            HttpRequest GetLatestVersionNode = GetNode<HttpRequest>("VersionText/LatestVersion/HTTPRequest");
 
             GetLatestVersionNode.RequestCompleted += OnRequestCompleted;
 
@@ -36,11 +42,11 @@ public partial class VersionChecker : Control {
         Globals.AccessLevel = ResponseValues[0];
         Globals.LatestVersion = ResponseValues[1];
 
-        Label LatestVersionLabel = GetNode<Label>("LatestVersion");
+        Label LatestVersionLabel = GetNode<Label>("VersionText/LatestVersion");
 
         LatestVersionLabel.Text = "Latest Version: " + Globals.LatestVersion;
 
-        Globals.VersionChecked = true;
+        Globals.FirstLoadDone = true;
 
         string GameVersion = ProjectSettings.GetSetting("application/config/version").AsString();
 
