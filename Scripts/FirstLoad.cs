@@ -25,7 +25,7 @@ public partial class FirstLoad : Control {
 
             GetLatestVersionNode.RequestCompleted += OnRequestCompleted;
 
-            GetLatestVersionNode.Request("https://games.lncvrt.xyz/database/canLoadClient.php", [
+            GetLatestVersionNode.Request("https://games.lncvrt.xyz/api/can-load-client", [
                 "Requester: BerryDashGodotClient",
                 "ClientVersion: " + GameVersion,
                 "ClientPlatform: " + OS.GetName()
